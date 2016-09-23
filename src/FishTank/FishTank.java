@@ -42,10 +42,10 @@ public class FishTank {
 		// System.out.println(s4.fishCount);
 		Food food = new Food();
 		Food.Time t = null;
-		food.feed(f1, 10, t.evening);
-		food.feed(f2, 10, t.evening);
-		food.feed(f3, 10, t.evening);
-		food.feed(f4, 10, t.evening);
+		food.feed(f1,goldFish, 10, t.evening);
+		food.feed(f2,goldFish, 10, t.evening);
+		food.feed(f3,goldFish, 10, t.evening);
+		food.feed(f4,goldFish, 10, t.evening);
 
 		double fedPerDay = 0.0d;
 		System.out.println("Enter your choice:");
@@ -62,24 +62,26 @@ public class FishTank {
 			System.out.println("Average food eaten by indivudual fish:" + avg + "gms");
 
 		}
-		case '2': {
+		case 2: {
 			System.out.println("Enter specie name");
 			String sName = sc.next();
-			int foodEatenBySpecie = 0;
-			if (Fish.hmap.containsKey(sName)) {
-				Iterator it = Fish.hmap.entrySet().iterator();
-				while (it.hasNext()) {
-					Map.Entry pair = (Map.Entry) it.next();
-					Fish t1 = new Fish();
-					t1 = (Fish) pair.getValue();
-					foodEatenBySpecie += t1.getFoodEaten();
+			float foodByspecie=0.0f;
+			foodByspecie=goldFish.Food/goldFish.fishCount;
+			//			int foodEatenBySpecie = 0;
+//			if (Fish.hmap.containsKey(sName)) {
+//				Iterator it = Fish.hmap.entrySet().iterator();
+//				while (it.hasNext()) {
+//					Map.Entry pair = (Map.Entry) it.next();
+//					Fish t1 = new Fish();
+//					t1 = (Fish) pair.getValue();
+//					foodEatenBySpecie += t1.getFoodEaten();
 //					System.out.println(pair.getKey() + " = " + pair.getValue());
-					it.remove(); // avoids a ConcurrentModificationException
-				}
+//					it.remove(); // avoids a ConcurrentModificationException
+//				}
 
-			} else {
-				System.out.println("no such specie found in fish tank");
-			}
+//			} else {
+//				System.out.println("no such specie found in fish tank");
+//			}
 		}
 		case '3': {
 

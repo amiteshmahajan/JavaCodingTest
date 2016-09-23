@@ -4,10 +4,10 @@ import java.util.HashMap;
 public class Fish {
 	private int fishCount;
 	private String fishName;
-	private String fishSpeciesName;
+	public String fishSpeciesName;
 	public int foodEaten=0;
 	public static int totalFish=0;
-	public static HashMap<String,Fish> hmap=new HashMap<String,Fish>();
+	
 	/**
 	 * @return the fishCount
 	 */
@@ -61,6 +61,6 @@ public class Fish {
 			s.fishCount+=1;
 			totalFish+=1;
 			
-			hmap.put(this.toString(), this);
+//			hmap.put(this.fishSpeciesName, this);
 		}
 }
